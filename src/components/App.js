@@ -17,6 +17,7 @@ export default function App() {
           <Route path="/sign-in" element={<LoginScreen />} />
           <Route path="/sign-up" element={<RegistrationScreen />} />
           <Route path="/history" element={<History/>} />
+          
         </Routes>
       </BrowserRouter>
     </UserContext.Provider>
