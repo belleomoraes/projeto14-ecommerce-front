@@ -1,5 +1,4 @@
-
-import { createGlobalStyle } from 'styled-components';
+import { createGlobalStyle } from "styled-components";
 
 const GlobalStyle = createGlobalStyle`
 
@@ -13,10 +12,10 @@ body {
     font-weight: 400;
     width: 100%;
     height: 100%;
+    
 }
 
 
-`
-
+`;
 
 export default GlobalStyle;
