@@ -25,7 +25,7 @@ export default function RegistrationScreen() {
   
   function sendRegistrationInfo() {
     const promise = axios.post(
-      "http://localhost:5000/sign-up",
+      "https://projeto14-ecommerce.herokuapp.com/sign-up",
       registrationInfo
     );
 
