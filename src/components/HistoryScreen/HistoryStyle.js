@@ -2,6 +2,7 @@ import styled from "styled-components";
 const HistoryStyle = styled.div`
   margin-top: 15vh;
   margin-bottom: 10vh;
+  opacity: ${(props) => (props.clicked ? "0.7" : "1")};
 
   span {
     flex-wrap: wrap;
@@ -13,7 +14,6 @@ const HistoryStyle = styled.div`
     background-color: #ffffff;
     padding: 2%;
     margin-bottom: 2%;
-    
   }
 
   h1 {

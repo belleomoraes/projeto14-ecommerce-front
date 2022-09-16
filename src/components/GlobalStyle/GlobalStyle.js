@@ -11,11 +11,11 @@ body {
     background-color: #e4e4e4;
     font-family: 'Questrial', sans-serif;
     font-weight: 400;
+    width: 100%;
+    height: 100%;
 }
 
-.root {
-    width: 100% ;
-}
+
 `
 
 
