@@ -20,7 +20,7 @@ export default function LoginScreen() {
   }
 
   function sendLoginInfo() {
-    const promise = axios.post("http://localhost:5000/sign-in", loginInfo);
+    const promise = axios.post("https://projeto14-ecommerce.herokuapp.com/sign-in", loginInfo);
 
     promise.then((res) => {
       localStorage.setItem("token", res.data.token);

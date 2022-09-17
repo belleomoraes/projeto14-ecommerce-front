@@ -6,11 +6,17 @@ import Home from "./HomeScreen/Home";
 import History from "./HistoryScreen/History";
 import LoginScreen from "./SignIn&UpScreens/LoginScreen";
 import RegistrationScreen from "./SignIn&UpScreens/RegistrationScreen";
+import { useState } from "react";
+
 
 export default function App() {
+  const [openOptions, setOpenOptions] = useState(false)
   return (
-    <UserContext.Provider>
-      <GlobalStyle />
+    <UserContext.Provider value={{
+      openOptions,
+      setOpenOptions,
+    }}>
+      <GlobalStyle openOptions = {openOptions}/>
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Home />} />

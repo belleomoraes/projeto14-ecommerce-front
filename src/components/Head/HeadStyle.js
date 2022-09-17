@@ -12,6 +12,7 @@ background-color: #242424;
   position: fixed;
   top: 0;
   z-index: 1;
+  height: 13%;
  
 
 div {

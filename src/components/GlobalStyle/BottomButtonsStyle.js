@@ -8,6 +8,7 @@ const BottomButtonsStyle = styled.div`
   bottom: 0;
   text-align: center;
   font-size: 2.4vh;
+  opacity: ${(props) => (props.openOptions ? "0.7" : "1")};
 
   div {
     background-color: #242424;

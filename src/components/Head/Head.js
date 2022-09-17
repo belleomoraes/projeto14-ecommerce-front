@@ -1,24 +1,41 @@
 import HeadStyle from "./HeadStyle";
-import { useState } from "react";
+import { useContext } from "react";
 import { useNavigate } from "react-router-dom";
-export default function Head() {
+import UserContext from "../../context/UserContext";
+
+export default function Head({ imageFromUser }) {
+  const { openOptions, setOpenOptions } = useContext(UserContext);
   const navigate = useNavigate();
 
-  function openOptions() {
-    //abrir opções pra login, cadastro etc
+  function open() {
+    setOpenOptions(true);
+  }
+
+  function close() {
+    setOpenOptions(false);
   }
 
   function changeScreen() {
     navigate("/cart");
   }
   return (
-    <HeadStyle>
-      <div>
-        <img src="https://www.tenhomaisdiscosqueamigos.com/wp-content/uploads/2022/02/rhcp-foto-encarte.jpg" />
-        <ion-icon name="chevron-down-circle-outline" onClick={openOptions}></ion-icon>
-      </div>
-      <h1>E-FOOD</h1>
-      <ion-icon name="cart-outline" onClick={changeScreen}></ion-icon>
-    </HeadStyle>
+    <>
+      <HeadStyle>
+        <div>
+          {imageFromUser === null ? (
+            <ion-icon name="person-circle-outline"></ion-icon>
+          ) : (
+            <img src={imageFromUser} />
+          )}
+          {openOptions ? (
+            <ion-icon name="chevron-up-circle-outline" onClick={close}></ion-icon>
+          ) : (
+            <ion-icon name="chevron-down-circle-outline" onClick={open}></ion-icon>
+          )}
+        </div>
+        <h1>E-FOOD</h1>
+        <ion-icon name="cart-outline" onClick={changeScreen}></ion-icon>
+      </HeadStyle>
+    </>
   );
 }
