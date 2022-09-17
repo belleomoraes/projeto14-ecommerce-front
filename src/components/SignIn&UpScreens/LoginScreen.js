@@ -4,6 +4,7 @@ import RegisterOrSignIn from "./Styles/RegisterOrLoginStyle";
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
 import axios from "axios";
+import styled from "styled-components";
 
 export default function LoginScreen() {
   const navigate = useNavigate();
@@ -51,28 +52,35 @@ export default function LoginScreen() {
     navigate("/sign-up");
   }
   return (
-    <RegisterOrSignIn>
-      <h1>E-FOOD</h1>
-      <Input>
-        <form>
-          <input
-            type="email"
-            placeholder="E-mail"
-            name="email"
-            value={loginInfo.email}
-            onChange={handleLogin}
-          />
-          <input
-            type="password"
-            placeholder="Senha"
-            name="password"
-            value={loginInfo.password}
-            onChange={handleLogin}
-          />
-        </form>
-      </Input>
-      <Button onClick={sendLoginInfo}>Entrar</Button>
-      <h2 onClick={ChangeScreen}>Primeira vez? Cadastre-se </h2>
-    </RegisterOrSignIn>
+    <LoginPadding>
+      <RegisterOrSignIn>
+        <h1>E-FOOD</h1>
+        <Input>
+          <form>
+            <input
+              type="email"
+              placeholder="E-mail"
+              name="email"
+              value={loginInfo.email}
+              onChange={handleLogin}
+            />
+            <input
+              type="password"
+              placeholder="Senha"
+              name="password"
+              value={loginInfo.password}
+              onChange={handleLogin}
+            />
+          </form>
+        </Input>
+        <Button onClick={sendLoginInfo}>Entrar</Button>
+        <h2 onClick={ChangeScreen}>Primeira vez? Cadastre-se </h2>
+      </RegisterOrSignIn>
+    </LoginPadding>
   );
 }
+
+const LoginPadding = styled.div`
+  background-color: #242424;
+  padding: 23vh 3vw;
+`;

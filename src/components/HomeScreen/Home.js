@@ -9,7 +9,6 @@ import Options from "./Options";
 export default function Home() {
   const { openOptions } = useContext(UserContext);
   const imageFromUser = localStorage.getItem("image");
-  console.log(imageFromUser)
   return (
     <>
       <Head imageFromUser = {imageFromUser}/>

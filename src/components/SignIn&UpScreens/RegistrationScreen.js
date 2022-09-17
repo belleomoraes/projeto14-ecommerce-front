@@ -4,6 +4,7 @@ import RegisterOrSignIn from "./Styles/RegisterOrLoginStyle";
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
 import axios from "axios";
+import styled from "styled-components";
 
 export default function RegistrationScreen() {
   const navigate = useNavigate();
@@ -73,6 +74,7 @@ export default function RegistrationScreen() {
     navigate("/sign-in");
   }
   return (
+    <RegistrationPadding>
     <RegisterOrSignIn>
       <h1>E-FOOD</h1>
       <Input>
@@ -117,5 +119,12 @@ export default function RegistrationScreen() {
       <Button onClick={sendRegistrationInfo}>Cadastrar</Button>
       <h2 onClick={ChangeScreen}>Já tem uma conta? Entre agora!</h2>
       </RegisterOrSignIn>
+      </RegistrationPadding>
   );
 }
+
+
+const RegistrationPadding = styled.div`
+  background-color: #242424;
+  padding: 9vh 3vw;
+`;
