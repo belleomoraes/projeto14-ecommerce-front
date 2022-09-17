@@ -20,12 +20,14 @@ export default function LoginScreen() {
   }
 
   function sendLoginInfo() {
-    const promise = axios.post("http://localhost:5000/sign-in", loginInfo);
+    console.log('vou perguntar');
+    const promise = axios.post("https://projeto14-ecommerce.herokuapp.com/sign-in", loginInfo);
 
+    console.log('vou perguntar');
     promise.then((res) => {
       localStorage.setItem("token", res.data.token);
       localStorage.setItem("image", res.data.image);
-
+      console.log('perguntei');
       navigate("/");
     });
 
@@ -38,7 +40,7 @@ export default function LoginScreen() {
         });
       }
 
-      if (res.response.status === 404) {
+      if (res.response.status === 400) {
         alert("E-mail ou senha incorretos");
         setLoginInfo({
           email: "",
@@ -52,27 +54,30 @@ export default function LoginScreen() {
   }
   return (
     <RegisterOrSignIn>
-      <h1>E-FOOD</h1>
-      <Input>
-        <form>
-          <input
-            type="email"
-            placeholder="E-mail"
-            name="email"
-            value={loginInfo.email}
-            onChange={handleLogin}
-          />
-          <input
-            type="password"
-            placeholder="Senha"
-            name="password"
-            value={loginInfo.password}
-            onChange={handleLogin}
-          />
-        </form>
-      </Input>
-      <Button onClick={sendLoginInfo}>Entrar</Button>
-      <h2 onClick={ChangeScreen}>Primeira vez? Cadastre-se </h2>
+      <div className="Wrapper">
+        <h1>E-FOOD</h1>
+        <Input>
+          <form>
+            <input
+              type="email"
+              placeholder="E-mail"
+              name="email"
+              value={loginInfo.email}
+              onChange={handleLogin}
+            />
+            <input
+              type="password"
+              placeholder="Senha"
+              name="password"
+              value={loginInfo.password}
+              onChange={handleLogin}
+            />
+            <Button onClick={sendLoginInfo}>Entrar</Button>
+                      </form>
+        </Input>
+        
+        <h2 onClick={ChangeScreen}>Primeira vez? Cadastre-se </h2>
+      </div>
     </RegisterOrSignIn>
   );
 }

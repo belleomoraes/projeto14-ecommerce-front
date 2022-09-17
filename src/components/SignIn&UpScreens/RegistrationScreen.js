@@ -25,7 +25,7 @@ export default function RegistrationScreen() {
   
   function sendRegistrationInfo() {
     const promise = axios.post(
-      "http://localhost:5000/sign-up",
+      "https://projeto14-ecommerce.herokuapp.com/sign-up",
       registrationInfo
     );
 
@@ -74,48 +74,51 @@ export default function RegistrationScreen() {
   }
   return (
     <RegisterOrSignIn>
-      <h1>E-FOOD</h1>
-      <Input>
-        <form>
-          <input
-            type="name"
-            placeholder="Nome"
-            name="name"
-            value={registrationInfo.name}
-            onChange={handleRegistration}
-          />
-          <input
-            type="email"
-            placeholder="E-mail"
-            name="email"
-            value={registrationInfo.email}
-            onChange={handleRegistration}
-          />
-           <input
-            type="url"
-            placeholder="Insira a URL de uma imagem"
-            name="image"
-            value={registrationInfo.image}
-            onChange={handleRegistration}
-          />
-          <input
-            type="password"
-            placeholder="Senha"
-            name="password"
-            value={registrationInfo.password}
-            onChange={handleRegistration}
-          />
-          <input
-            type="password"
-            placeholder="Confirme a senha"
-            name="confirmPassword"
-            value={registrationInfo.confirmPassword}
-            onChange={handleRegistration}
-          />
-        </form>
-      </Input>
-      <Button onClick={sendRegistrationInfo}>Cadastrar</Button>
-      <h2 onClick={ChangeScreen}>Já tem uma conta? Entre agora!</h2>
+      <div className="Wrapper">
+        <h1>E-FOOD</h1>
+        <Input>
+          <form>
+            <input
+              type="name"
+              placeholder="Nome"
+              name="name"
+              value={registrationInfo.name}
+              onChange={handleRegistration}
+            />
+            <input
+              type="email"
+              placeholder="E-mail"
+              name="email"
+              value={registrationInfo.email}
+              onChange={handleRegistration}
+            />
+            <input
+              type="url"
+              placeholder="Insira a URL de uma imagem"
+              name="image"
+              value={registrationInfo.image}
+              onChange={handleRegistration}
+            />
+            <input
+              type="password"
+              placeholder="Senha"
+              name="password"
+              value={registrationInfo.password}
+              onChange={handleRegistration}
+            />
+            <input
+              type="password"
+              placeholder="Confirme a senha"
+              name="confirmPassword"
+              value={registrationInfo.confirmPassword}
+              onChange={handleRegistration}
+            />
+             <Button onClick={sendRegistrationInfo}>Cadastrar</Button>
+          </form>
+        </Input>
+       
+        <h2 onClick={ChangeScreen}>Já tem uma conta? Entre agora!</h2>
+      </div>
       </RegisterOrSignIn>
   );
 }

@@ -12,6 +12,7 @@ const Input = styled.div`
     border: 1px solid #d5d5d5;
     border-radius: 5px;
     width: 80vw;
+    max-width:600px;
     height: 8vh;
     margin: 10px;
     font-size: 100%;
