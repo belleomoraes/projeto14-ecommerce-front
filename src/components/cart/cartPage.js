@@ -1,6 +1,7 @@
 import Head from "../Head/Head";
 import BottomButtonsStyle from "../GlobalStyle/BottomButtonsStyle";
 import Products from "./Products";
+import WithoutProducts from "./WithoutProducts";
 import UserContext from "../../context/UserContext";
 import { useContext } from "react";
 import { useNavigate } from "react-router-dom";
@@ -9,7 +10,7 @@ import Options from "../HomeScreen/Options";
 import axios from "axios";
 
 export default function CartPage() {
-
+ 
   const navigate = useNavigate();
   const { openOptions, totalValue,
           setTotalValue,
@@ -46,7 +47,7 @@ export default function CartPage() {
       <Head imageFromUser={imageFromUser} />
       {openOptions ? <Options imageFromUser={imageFromUser} /> : ""}
       <Opacity openOptions={openOptions}>
-        <Products />
+        {arrProducts.length === 0 ? <WithoutProducts/>: <Products />}
         <BottomButtonsStyle>
           <div>
             TOTAL DA COMPRA: <h1>R$ {totalValue.toFixed(2)}</h1>

@@ -44,7 +44,7 @@ export default function History() {
       <Head imageFromUser={imageFromUser} />
       {openOptions ? <Options imageFromUser={imageFromUser} /> : ""}
       <Opacity openOptions={openOptions}>
-        <HistoryStyle>{history.length <= 0 ? <WithoutHistory /> : <WithHistory />}</HistoryStyle>
+        <HistoryStyle>{history.length <= 0 ? <WithoutHistory /> : <WithHistory history = {history}/>}</HistoryStyle>
 
         <BottomButtonsStyle>
           <div>
