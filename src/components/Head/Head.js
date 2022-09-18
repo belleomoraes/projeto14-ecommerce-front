@@ -16,6 +16,7 @@ export default function Head({ imageFromUser }) {
   }
 
   function changeScreen() {
+    setOpenOptions(false);
     navigate("/cart");
   }
   function changeHome() {

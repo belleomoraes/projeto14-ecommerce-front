@@ -3,14 +3,19 @@ import BottomButtonsStyle from "../GlobalStyle/BottomButtonsStyle";
 import Products from "./Products";
 import UserContext from "../../context/UserContext";
 import { useContext } from "react";
+import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
 import Options from "../HomeScreen/Options";
 import axios from "axios";
 
 export default function CartPage() {
+
+  const navigate = useNavigate();
   const { openOptions, totalValue,
-          arrProducts
+          setTotalValue,
+          arrProducts, SetArrProducts
   } = useContext(UserContext);
+
   const token = localStorage.getItem("token");
   const imageFromUser = localStorage.getItem("image");
 
@@ -21,11 +26,14 @@ export default function CartPage() {
       itens: arrProducts,
       value: totalValue
     };
-    console.log(item);
+    console.log(token);
      const promise = axios.post("https://projeto14-ecommerce.herokuapp.com/cart", item);
 
      promise.then((res) => {
        console.log("enviei");
+       SetArrProducts([]);
+       setTotalValue(0);
+       navigate("/");
      });
 
      promise.catch((res) => {

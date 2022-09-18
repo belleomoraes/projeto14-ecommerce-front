@@ -11,11 +11,15 @@ import { useNavigate } from "react-router-dom";
 export default function Home() {
 
   const navigate = useNavigate();
-  const { openOptions, totalValue } = useContext(UserContext);
+  const { 
+          openOptions, totalValue, 
+          setOpenOptions 
+        } = useContext(UserContext);
   const imageFromUser = localStorage.getItem("image");
   
   function changeScreen() {
     navigate("/cart");
+    setOpenOptions(false);
   }
   const listOptions = [{
     name : "brigadeiro",
