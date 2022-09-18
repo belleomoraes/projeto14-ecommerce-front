@@ -5,10 +5,16 @@ import UserContext from "../../context/UserContext";
 import { useContext } from "react";
 import styled from "styled-components";
 import Options from "./Options";
+import { useNavigate } from "react-router-dom";
 
 export default function Home() {
-  const { openOptions } = useContext(UserContext);
+
+  const navigate = useNavigate();
+  const { openOptions, totalValue } = useContext(UserContext);
   const imageFromUser = localStorage.getItem("image");
+  function changeScreen() {
+    navigate("/cart");
+  }
   return (
     <>
       <Head imageFromUser = {imageFromUser}/>
@@ -17,9 +23,9 @@ export default function Home() {
         <Products />
         <BottomButtonsStyle>
           <div>
-            TOTAL DA COMPRA: <h1>R$ 00,00</h1>
+            TOTAL DA COMPRA: <h1>R$ {totalValue.toFixed(2)}</h1>
           </div>
-          <span>FINALIZAR</span>
+          <span onClick={changeScreen}>FINALIZAR</span>
         </BottomButtonsStyle>
       </Opacity>
     </>

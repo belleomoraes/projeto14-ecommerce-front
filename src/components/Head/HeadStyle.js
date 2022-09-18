@@ -8,11 +8,12 @@ background-color: #242424;
   color: #ffffff;
   font-weight: 400;
   padding: 2% 5%;
+  min-width:290px;
   width: 100%;
   position: fixed;
   top: 0;
   z-index: 1;
-  height: 13%;
+  height: 11%;
  
 
 div {
@@ -26,7 +27,7 @@ div {
 }
   img {
     border-radius: 50%;
-    width: 10vw;
+    width: 10vh;
     height: 10vh;
     margin-right: 10%;
   }
