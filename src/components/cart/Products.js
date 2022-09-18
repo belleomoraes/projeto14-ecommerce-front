@@ -4,31 +4,28 @@ import UserContext from "../../context/UserContext";
 
 export default function Products() {
   const { setTotalValue, totalValue,
-          SetArrProducts, arrProducts
+    SetArrProducts, arrProducts
   } = useContext(UserContext);
 
-console.log(arrProducts);
-const listOptions = [];
-listOptions.push(arrProducts);
-let value = 0;
-function ShopValue(l){
+  console.log(arrProducts);
+  const listOptions = [];
+  listOptions.push(arrProducts);
 
-}
   return (
     <ProductsStyle>
       <span>
-        {arrProducts.map((l)=> {
-          return(
-            <div key={l._id} onClick={()=>{ShopValue(l)}} className="foodItem">
+        {arrProducts.map((l) => {
+          return (
+            <div key={l._id} className="foodItem">
               <div>
-              <img  src={l[0].image} alt={l.name}/>
+                <img src={l[0].image} alt={l.name} />
                 <h1>{l[0].name}</h1></div>
-              <h2>{l[0].value.toFixed(2)}</h2>
-              <h2><ion-icon name="close-circle-outline"/></h2>
-            </div> )
+              <h2>R${l[0].value.toFixed(2)}</h2>
+              <h2><ion-icon name="close-circle-outline" /></h2>
+            </div>)
         })}
       </span>
-   </ProductsStyle>
+    </ProductsStyle>
   );
 }
 
@@ -47,7 +44,6 @@ const ProductsStyle = styled.div`
     display:flex;
     height: 100%;
     align-items:center;
-    background-color:red;
   }
   span {
     flex-wrap: wrap;

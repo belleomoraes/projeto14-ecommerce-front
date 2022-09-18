@@ -33,10 +33,12 @@ div {
   }
 
 ion-icon {
+  cursor: pointer;
   font-size: 4vh;
 }
 
 h1 {
+  cursor: pointer;
   font-size: 4.5vh;
 }
 `;

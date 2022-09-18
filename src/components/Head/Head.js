@@ -18,6 +18,9 @@ export default function Head({ imageFromUser }) {
   function changeScreen() {
     navigate("/cart");
   }
+  function changeHome() {
+    navigate("/");
+  }
   return (
     <>
       <HeadStyle>
@@ -33,7 +36,7 @@ export default function Head({ imageFromUser }) {
             <ion-icon name="chevron-down-circle-outline" onClick={open}></ion-icon>
           )}
         </div>
-        <h1>E-FOOD</h1>
+        <h1 onClick={changeHome}>E-FOOD</h1>
         <ion-icon name="cart-outline" onClick={changeScreen}></ion-icon>
       </HeadStyle>
     </>

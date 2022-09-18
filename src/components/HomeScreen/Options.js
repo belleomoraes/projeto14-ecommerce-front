@@ -49,9 +49,12 @@ const OptionsStyle = styled.div`
   background-color: #d9d9d9;
   display: flex;
   flex-direction: column;
-  top: 13vh;
+  top: 10.99vh;
   padding: 2%;
+  min-width:235px;
+  max-width:290px;
   width: 50%;
+  max-height:100px;
   font-size: 2.5vh;
   position: fixed;
   z-index: 1;
