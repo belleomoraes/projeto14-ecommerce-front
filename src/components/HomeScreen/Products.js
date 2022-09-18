@@ -4,9 +4,12 @@ import UserContext from "../../context/UserContext";
 import axios from "axios";
 
 export default function Products() {
-  const { setTotalValue, totalValue,
+
+  const { 
+          setTotalValue, totalValue,          
           SetArrProducts, arrProducts
-  } = useContext(UserContext);
+        } = useContext(UserContext);
+
   const token = localStorage.getItem("token");
 
    const listOptions = [{
@@ -88,6 +91,7 @@ let newArr = []
 //     console.log("algo deu errado");
 //   });
 // }, []);
+
 function ShopValue(l){
   value = value + l.value;
   newArr.push(l);
