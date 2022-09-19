@@ -30,10 +30,11 @@ export default function Products() {
   const productsString = JSON.stringify(arrProducts)
   localStorage.setItem("productsCart", productsString);
   
+  
   return (
     <ProductsStyle>
       <span>
-        {listOptions.map((l) => {
+        {listOptions.length > 0 ? (listOptions.map((l) => {
           return (
             <div
               key={l._id}
@@ -48,7 +49,7 @@ export default function Products() {
               <h2>{l.description}</h2>
             </div>
           );
-        })}
+        })) : ""}
       </span>
     </ProductsStyle>
   );

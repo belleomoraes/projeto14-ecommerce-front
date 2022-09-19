@@ -12,7 +12,7 @@ import axios from "axios";
 
 export default function CartPage() {
   const navigate = useNavigate();
-  const { openOptions, totalValue, setTotalValue, arrProducts, SetArrProducts } =
+  const { openOptions, totalValue, setTotalValue, SetArrProducts } =
     useContext(UserContext);
 
   const token = localStorage.getItem("token");
