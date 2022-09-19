@@ -27,7 +27,7 @@ export default function Products() {
     SetArrProducts((arrProducts) => [...arrProducts, newArr]);
     setTotalValue(totalValue + value);
   }
-  console.log(listOptions);
+
   return (
     <ProductsStyle>
       <span>

@@ -29,6 +29,10 @@ export default function CartPage() {
     };
     console.log(token);
     console.log(arrProducts)
+    if (token === null) {
+      alert("Faça o login antes de finalizar a compra")
+      navigate("/sign-in")
+    }
      const promise = axios.post("https://projeto14-ecommerce.herokuapp.com/cart", item);
 
      promise.then((res) => {
