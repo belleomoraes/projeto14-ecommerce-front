@@ -11,7 +11,7 @@ export default function Products() {
   let newArr = [];
 
   useEffect(() => {
-    const promise = axios.get("http://localhost:5000/"); //n esquecer de mudar pro heroku
+    const promise = axios.get("https://projeto14-ecommerce.herokuapp.com/"); 
     promise.then((res) => {
       setListOptions(res.data);
     });
