@@ -5,7 +5,7 @@ import axios from "axios";
 
 export default function Products() {
   const [listOptions, setListOptions] = useState([]);
-  const { setTotalValue, totalValue, SetArrProducts } = useContext(UserContext);
+  const { setTotalValue, totalValue, SetArrProducts, arrProducts } = useContext(UserContext);
 
   let value = 0;
   let newArr = [];
@@ -27,7 +27,9 @@ export default function Products() {
     SetArrProducts((arrProducts) => [...arrProducts, newArr]);
     setTotalValue(totalValue + value);
   }
-
+  const productsString = JSON.stringify(arrProducts)
+  localStorage.setItem("productsCart", productsString);
+  
   return (
     <ProductsStyle>
       <span>

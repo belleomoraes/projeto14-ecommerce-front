@@ -1,27 +1,30 @@
 import styled from "styled-components";
 import { useContext } from "react";
 import UserContext from "../../context/UserContext";
+import axios from "axios";
+import { useNavigate } from "react-router-dom";
 
-export default function Products() {
+export default function Products({productsCart}) {
+  const navigate = useNavigate();
   const { setTotalValue, totalValue,
     SetArrProducts, arrProducts
   } = useContext(UserContext);
 
   console.log(arrProducts);
   const listOptions = [];
-  listOptions.push(arrProducts);
+  listOptions.push(productsCart);
 
   return (
     <ProductsStyle>
       <span>
-        {arrProducts.map((l) => {
+        {productsCart.map((l) => {
           return (
             <div key={l._id} className="foodItem">
               <div>
                 <img src={l[0].image} alt={l.name} />
                 <h1>{l[0].name}</h1></div>
               <h2>R${l[0].value.toFixed(2)}</h2>
-              <h2><ion-icon name="close-circle-outline" /></h2>
+              <h2 ><ion-icon name="close-circle-outline" /></h2>
             </div>)
         })}
       </span>
