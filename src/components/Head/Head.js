@@ -20,6 +20,7 @@ export default function Head({ imageFromUser }) {
     navigate("/cart");
   }
   function changeHome() {
+    setOpenOptions(false);
     navigate("/");
   }
   return (
