@@ -54,7 +54,7 @@ const OptionsStyle = styled.div`
   min-width:235px;
   max-width:290px;
   width: 50%;
-  max-height:100px;
+  max-height:250px;
   font-size: 2.5vh;
   position: fixed;
   z-index: 1;
