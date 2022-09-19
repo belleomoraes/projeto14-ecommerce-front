@@ -28,6 +28,7 @@ export default function CartPage() {
       value: totalValue
     };
     console.log(token);
+    console.log(arrProducts)
      const promise = axios.post("https://projeto14-ecommerce.herokuapp.com/cart", item);
 
      promise.then((res) => {
@@ -38,7 +39,7 @@ export default function CartPage() {
      });
 
      promise.catch((res) => {
-       console.log("algo deu errado");
+       console.log(res);
      });
   }
 
